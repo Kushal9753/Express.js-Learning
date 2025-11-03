@@ -13,5 +13,11 @@ app.post("/submit-user", (req, resp)=>{
     resp.render('submitUser', req.body)
 })
 
+app.get("/users", (req, resp)=>{
+  const users = ['kushal', 'sahu','peter']
+  
+    resp.render('users',{users:users, isLogin:false});
+})
 
-app.listen(3200)
+
+app.listen(3400)
