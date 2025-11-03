@@ -1,0 +1,15 @@
+
+    h1{
+      color: orange;
+    }
+    a{
+      text-decoration:none;
+      padding: 10px 20px;
+      background-color: green;
+      color:white;
+      border-radius: 10px;
+    }
+    a:hover{
+      background-color: rgba(47, 184, 79, 1);
+    }
+  
