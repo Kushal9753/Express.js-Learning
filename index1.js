@@ -1,8 +1,8 @@
 // const express = require('express')
 
 import express from 'express';
-import home, { contact } from './pages/home.js';   // Ecma Script ke tags hai
-import about from './pages/about.js';
+import home, { contact } from './pages/home1.js';   // Ecma Script ke tags hai
+import about from './pages/about1.js';
 
 const app = express();
 
