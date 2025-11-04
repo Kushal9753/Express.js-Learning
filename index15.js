@@ -8,6 +8,7 @@ app.set("view engine", 'ejs')
 
 
 app.use(express.urlencoded({extended:true}))
+app.use(express.json());
 
 
 client.connect().then((connection)=>{
@@ -45,6 +46,21 @@ client.connect().then((connection)=>{
       // const students = await collection.find().toArray()
 
       resp.send("data saved")
+   })
+
+   app.post("/add-student-api",async (req, resp)=>{
+      console.log(req.body);
+      const {name,age,email}=req.body
+
+      if(!name || !age || !email)
+      {
+         resp.send({message:"operation failed", success:false})
+         return false
+      }
+
+      const collection = db.collection("students");
+      const result = await collection.insertOne(req.body)
+      resp.send({message:"data stored", success:true, result:result})
    })
 })
 
